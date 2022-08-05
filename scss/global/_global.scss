@@ -1,0 +1,249 @@
+body {
+	@include indent-reset();
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	font-family: $kanit;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 23px;
+
+	&.theme-dark {
+		background-color: $black;
+		color: $white;
+	}
+}
+
+.py-60 {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+.main {
+	position: relative;
+	overflow: hidden;
+}
+
+.container {
+	padding-left: 16px;
+	padding-right: 16px;
+	box-sizing: border-box;
+
+	@media (min-width: $sm) {
+		max-width: 100%;
+	}
+
+	@media (min-width: $md) {
+		max-width: 720px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	@media (min-width: $lg) {
+		max-width: 960px;
+	}
+
+	@media (min-width: $xl) {
+		max-width: 1080px;
+	}
+}
+
+.image {
+	img {
+		max-width: 100%;
+		background: #ecf0fa;
+		border-radius: 25px;
+
+		.theme-dark & {
+			background-color: $gray;
+		}
+	}
+
+	figcaption {
+		align-self: flex-start;
+	}
+}
+
+.table {
+	margin-top: 15px;
+	margin-bottom: 40px;
+	border: 1px solid $border;
+
+	.theme-dark & {
+		border: 1px solid $gray;
+	}
+
+	th {
+		color: $primary;
+		padding: 15px 20px;
+
+		.theme-dark & {
+			color: $secondary;
+		}
+	}
+
+	td {
+		padding: 15px 20px 18px 20px;
+
+		.theme-dark & {
+			color: $white;
+		}
+	}
+
+	& > :not(:first-child),
+	tbody {
+		border-top: 2px solid $primary;
+
+		.theme-dark & {
+			border-top: 2px solid $secondary;
+		}
+	}
+}
+
+.blockquote {
+	position: relative;
+	display: flex;
+	margin-bottom: 46px;
+	font-weight: 500;
+	font-size: 19px;
+	line-height: 25px;
+
+	p {
+		font-size: inherit;
+	}
+
+	&::before {
+		content: "“";
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 35px;
+		height: 35px;
+		flex-shrink: 0;
+		margin-right: 17px;
+		font-family: $dela;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 29.5775px;
+		line-height: 26px;
+		text-transform: uppercase;
+		color: $white;
+		background-color: $primary;
+		border-radius: 50%;
+
+		.theme-dark & {
+			background-color: $secondary;
+		}
+	}
+
+	&-wrapper {
+		margin-top: 55px;
+		margin-bottom: 40px;
+	}
+
+	&-footer {
+		display: flex;
+		align-items: center;
+		padding-left: 50px;
+
+		&::before {
+			display: none;
+		}
+
+		cite {
+			font-style: normal;
+			font-weight: 500;
+			font-size: 16px;
+			color: $black;
+			line-height: 25px;
+
+			span {
+				display: block;
+				opacity: 0.6;
+			}
+
+			.theme-dark & {
+				color: $white;
+			}
+		}
+	}
+
+	&-image {
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		overflow: hidden;
+		margin-right: 20px;
+
+		img {
+			@include img-cover-center();
+		}
+	}
+}
+
+.figure {
+	&-img {
+		margin-bottom: 12px;
+	}
+
+	&-caption {
+		font-size: 13px;
+		line-height: 18px;
+		opacity: .65;
+		color: $black;
+
+		.theme-dark & {
+			color: $white;
+		}
+	}
+}
+
+.image-demo {
+	&--light {
+		.theme-dark & {
+			display: none;
+		}
+	}
+
+	&--dark {
+		display: none;
+
+		.theme-dark & {
+			display: block;
+		}
+	}
+}
+
+.rounded {
+	border-radius: 15px !important; //phpcs:ignore
+
+	@media (min-width: $md) {
+		border-radius: 25px !important; //phpcs:ignore
+	}
+}
+
+.scroll-to-top {
+	display: none;
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+	width: 60px;
+	height: 60px;
+	opacity: 0.8;
+	background-image: url(@img/scroll.svg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
+	cursor: pointer;
+	transition: all $slow ease-in-out;
+	z-index: 1;
+
+	&:hover {
+		opacity: 1;
+		transform: scale(1.1);
+	}
+
+	.theme-dark & {
+		background-image: url(@img/scroll-dark.svg);
+	}
+}

@@ -1,0 +1,275 @@
+.btn {
+	@include indent-reset();
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	font-family: $dela;
+	font-size: 12px;
+	line-height: 30px;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
+	outline: none;
+}
+
+.btn-animate {
+	opacity: 0;
+	visibility: hidden;
+	-webkit-tap-highlight-color: transparent;
+	outline: none;
+	border-radius: 20px;
+
+	&--primary {
+		@media (max-width: $md) {
+			&:focus {
+				box-shadow: none;
+				background-color: darken($primary, 10%);
+			}
+		}
+	}
+
+	&--white {
+		@media (max-width: $md) {
+			&:focus {
+				box-shadow: none;
+				background-color: #e0e0e0;
+			}
+		}
+	}
+
+	&--outlined {
+		@media (max-width: $md) {
+			&:focus {
+				box-shadow: none;
+				background-color: #e0e0e0;
+			}
+		}
+	}
+
+	&__container {
+		display: flex;
+		position: relative;
+		height: 40px;
+
+		@media (min-width: $md) {
+			height: 45px;
+		}
+	}
+
+	&__background {
+		left: 0;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		border-radius: 20px;
+		left: auto;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		transition: all $normal cubic-bezier(0.17, 0.17, 0.16, 1);
+
+		&--primary {
+			background-color: $primary;
+
+			.theme-dark & {
+				background-color: $secondary;
+			}
+		}
+
+		&--white {
+			background-color: $white;
+		}
+
+		&--outlined {
+			background-color: $white;
+			border: 1px solid $black;
+
+			.theme-dark & {
+				background-color: $black;
+				border: 1px solid $white;
+			}
+		}
+	}
+
+	&__text {
+		font-family: $dela;
+		font-size: 10px;
+		line-height: 26px;
+		letter-spacing: 0.02em;
+		text-transform: uppercase;
+		margin: 0;
+		white-space: nowrap;
+		transition: all $normal cubic-bezier(0.33, 0, 0, 1);
+
+		@media (min-width: $md) {
+			font-size: 12px;
+			line-height: 30px;
+		}
+
+		&--primary {
+			color: $white;
+		}
+
+		&--white {
+			color: $black;
+		}
+
+		&--outlined {
+			color: $black;
+
+			.theme-dark & {
+				color: $white;
+			}
+		}
+
+		&-container {
+			position: relative;
+			padding: 10px 28px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: all $normal cubic-bezier(0.33, 0, 0, 1);
+		}
+	}
+
+	&__icon {
+		position: relative;
+		fill: currentColor;
+		width: 12px;
+		height: 12px;
+		margin-left: 0.1rem;
+		transform: rotate(-90deg);
+		transition: all $normal cubic-bezier(0.33, 0, 0, 1);
+
+		&-mask {
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			border-radius: 20px;
+			overflow: hidden;
+		}
+
+		&-background {
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			border-radius: 50%;
+		}
+
+		&-container {
+			width: 45px;
+			height: 45px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+		}
+	}
+
+	&.mouseover {
+		.btn-animate {
+			&__background {
+				width: 45px;
+				height: 45px;
+				border-radius: 45px;
+			}
+
+			&__text {
+				&--primary {
+					color: $black;
+
+					.theme-dark & {
+						color: $white;
+					}
+				}
+
+				&--white {
+					color: $white;
+				}
+			}
+
+			&__icon {
+				&--primary {
+					color: $white;
+				}
+				&--white {
+					color: $black;
+				}
+				&--outlined {
+					color: $black;
+
+					.theme-dark & {
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+}
+
+.btn-slide {
+	display: inline-flex;
+	align-items: center;
+	color: $black;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	.theme-dark & {
+		color: $white;
+	}
+
+	&:hover,
+	&:focus {
+		color: $black;
+
+		.theme-dark & {
+			color: $white;
+		}
+	}
+
+	@media (max-width: $md) {
+		&:active {
+			color: lighten($black, 15%);
+		}
+	}
+
+	&__text {
+		font-family: $dela;
+		white-space: nowrap;
+		font-size: 17px;
+		line-height: 30px;
+		color: inherit;
+		position: relative;
+		z-index: 2;
+		transition: all $slow cubic-bezier(0.17, 0.17, 0.16, 1);
+
+		&-container {
+			overflow: hidden;
+			height: 30px;
+		}
+	}
+
+	&__ellipse {
+		position: relative;
+		flex-shrink: 0;
+		left: -50px;
+		z-index: 1;
+		width: 72px;
+		height: 72px;
+		border-radius: 50%;
+		background-color: $primary;
+
+		.theme-dark & {
+			background-color: $secondary;
+		}
+	}
+}

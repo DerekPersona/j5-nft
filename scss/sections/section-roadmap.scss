@@ -1,0 +1,157 @@
+.section-roadmap {
+	position: relative;
+	margin-bottom: 40px;
+
+	@media (min-width: $md) {
+		margin-bottom: 60px;
+	}
+
+	&__image {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 60%;
+		height: 670px;
+		background-image: url(@img/section-roadmap.jpeg);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: left bottom;
+		transition: all $veryslow cubic-bezier(0.075, 0.82, 0.165, 1);
+
+		&:hover {
+			transform: scale(1.1) translateX(10px) rotate(2deg);
+		}
+
+		@media (min-width: 1380px) {
+			display: block;
+		}
+
+		@media (min-width: $lg) {
+			width: 30%;
+		}
+
+		.theme-dark & {
+			background-image: url(@img/section-roadmap-dark.png);
+		}
+	}
+
+	&__wrapper {
+		position: relative;
+		width: 100%;
+		min-height: 500px;
+	}
+
+	&__title {
+		margin-bottom: 25px;
+
+		@media (min-width: $md) {
+			margin-bottom: 20px;
+		}
+
+		.theme-dark & {
+			color: $white;
+		}
+	}
+
+	&__text {
+		font-size: 17px;
+		line-height: 23px;
+		margin-bottom: 37px;
+
+		@media (min-width: $md) {
+			font-size: 19px;
+			line-height: 25px;
+		}
+
+		.theme-dark & {
+			color: $white;
+		}
+	}
+
+	&__list {
+		margin-bottom: 50px;
+	}
+
+	&__item {
+		border-bottom: 1px solid $border;
+
+		.theme-dark & {
+			border-bottom: 1px solid $gray;
+
+			&:first-child {
+				border-top: 1px solid $gray;
+			}
+		}
+
+		&:first-child {
+			border-top: 1px solid $border;
+		}
+
+		&-heading {
+			font-family: $dela;
+			display: flex;
+			align-items: center;
+			padding: 21px 0 16px 0;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 23px;
+			cursor: pointer;
+
+			.theme-dark & {
+				color: $white;
+			}
+		}
+
+		&-number {
+			font-family: $dela;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-width: 70px;
+			height: 36px;
+			margin-right: 18px;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 23px;
+			background-color: $white;
+			border: 1px solid #222222;
+			border-radius: 50px;
+			transition: all $normal ease-in-out;
+
+			.theme-dark & {
+				background-color: $gray;
+			}
+
+			&.opened {
+				background-color: $primary;
+				color: $white;
+				border: 1px solid $primary;
+
+				.theme-dark & {
+					background-color: $secondary;
+					border: 1px solid $secondary;
+				}
+			}
+		}
+
+		&-content {
+			opacity: 0.7;
+			display: none;
+			padding-bottom: 20px;
+
+			p:last-child {
+				margin-bottom: 0;
+			}
+
+			.theme-dark & {
+				color: $white;
+			}
+		}
+	}
+
+	&__button {
+		display: flex;
+		justify-content: center;
+	}
+}

@@ -1,0 +1,94 @@
+.carousel {
+	&__nav {
+		display: flex;
+	}
+
+	&__prev,
+	&__next {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 40px;
+		height: 40px;
+		background-color: $white;
+		border: 1px solid $border;
+		border-radius: 50%;
+		transition: all $normal ease-in-out;
+		cursor: pointer;
+
+		.theme-dark & {
+			background-color: $black;
+			border: 1px solid #777;
+		}
+
+		svg {
+			width: 19px;
+			height: 13px;
+			color: $primary;
+			fill: currentColor;
+			transition: all $normal ease-in-out;
+
+			.theme-dark & {
+				color: $secondary;
+			}
+		}
+
+		&:hover,
+		&:focus {
+			background-color: $primary;
+
+			svg {
+				color: $white;
+			}
+
+			.theme-dark & {
+				background-color: $secondary;
+				border: 1px solid $secondary;
+			}
+		}
+	}
+}
+
+.owl-carousel {
+	.owl-dots {
+		.owl-dot {
+			span {
+				margin: 5px 12px;
+				background: $white;
+				border: 1px solid $border;
+				transition: all 0.2s ease;
+			}
+
+			&:hover {
+				span {
+					opacity: 0.4;
+					background: $primary;
+					border: 1px solid $primary;
+
+					.theme-dark & {
+						background: $secondary;
+						border: 1px solid $secondary;
+					}
+				}
+			}
+
+			&.active {
+				span {
+					background: $primary;
+					border: 1px solid $primary;
+
+					.theme-dark & {
+						background: $secondary;
+						border: 1px solid $secondary;
+					}
+				}
+
+				&:hover {
+					span {
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}

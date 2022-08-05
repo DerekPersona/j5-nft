@@ -1,0 +1,129 @@
+.section-quote {
+	margin-bottom: 70px;
+
+	@media (min-width: $md) {
+		margin-bottom: 167px;
+	}
+
+	&__wrapper {
+		background-color: #ecf0fa;
+		border-radius: 25px;
+		overflow: hidden;
+
+		@media (min-width: $sm) {
+			display: flex;
+
+		}
+
+		.theme-dark & {
+			background-color: $gray-dark;
+		}
+	}
+
+	&__image {
+		display: none;
+		flex-shrink: 0;
+		height: 100%;
+		margin-top: 30px;
+		overflow: hidden;
+
+		@media (min-width: $md) {
+			margin-top: 0;
+			display: block;
+		}
+
+		img {
+			width: 255px;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+
+			@media (min-width: $xl) {
+				height: 289px;
+			}
+		}
+	}
+
+	&__content {
+		position: relative;
+		z-index: 0;
+		padding: 40px;
+
+		@media (min-width: $sm) {
+			display: flex;
+		}
+
+		@media (min-width: $md) {
+			padding: 72px 40px;
+		}
+
+		@media (min-width: $lg) {
+			padding: 72px 165px 65px 126px;
+		}
+	}
+
+	&__icon {
+		position: absolute;
+		width: 87px;
+		height: 71px;
+		top: 15px;
+		left: 15px;
+		z-index: -1;
+		color: $white;
+		font-family: $dela;
+		border-radius: 50%;
+
+		img {
+			width: 100%;
+		}
+
+		@media (min-width: $lg) {
+			width: 117px;
+			height: 101px;
+			object-fit: contain;
+			top: 42px;
+			left: 53px;
+		}
+	}
+
+	&__text {
+		font-family: $dela;
+		font-size: 17px;
+		line-height: 25px;
+		margin-bottom: 15px;
+
+		@media (min-width: $lg) {
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 23px;
+		}
+
+		.theme-dark & {
+			color: $white;
+		}
+	}
+
+	&__name {
+		font-weight: 400;
+		font-size: 15px;
+		line-height: 23px;
+		margin-bottom: 1px;
+
+		@media (min-width: $sm) {
+			font-weight: 500;
+		}
+
+		.theme-dark & {
+			color: $white;
+		}
+	}
+
+	&__position {
+		opacity: 0.6;
+		margin-bottom: 0;
+
+		.theme-dark & {
+			color: $white;
+		}
+	}
+}

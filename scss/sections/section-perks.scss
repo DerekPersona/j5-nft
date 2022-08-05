@@ -1,0 +1,65 @@
+.section-perks {
+	margin-bottom: 70px;
+
+	@media (min-width: $md) {
+		margin-bottom: 71px;
+	}
+
+	&__item-header {
+		margin-bottom: 12px;
+	}
+
+	&__title {
+		position: relative;
+		overflow: visible;
+		width: 100%;
+
+		.theme-dark & {
+			color: $white;
+		}
+
+		br {
+			display: none;
+
+			@media (min-width: $lg) {
+				display: block;
+			}
+		}
+
+		&-image {
+			position: absolute;
+			top: -40px;
+			right: 60px;
+			z-index: -1;
+
+			@media (min-width: $sm) {
+				top: -20px;
+				right: 80px;
+			}
+
+			.theme-dark & {
+				opacity: 0.1;
+			}
+		}
+	}
+
+	&__item {
+		padding: 0 50px 35px 10px;
+
+		@media (min-width: $sm) {
+			padding: 0 50px 50px 10px;
+		}
+
+		&--title {
+			padding: 0 0 35px 10px;
+
+			h2 {
+				margin-bottom: 0;
+			}
+		}
+
+		&-icon {
+			margin-right: 14px;
+		}
+	}
+}

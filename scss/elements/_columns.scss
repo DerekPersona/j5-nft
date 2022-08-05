@@ -1,0 +1,28 @@
+.columns {
+	margin-bottom: 40px;
+
+	@media (min-width: $sm) {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	div:first-child {
+		margin-bottom: 20px;
+
+		@media (min-width: $sm) {
+			margin-bottom: 0;
+		}
+	}
+
+	&__content {
+		@media (min-width: $sm) {
+			width: 58%;
+		}
+	}
+
+	&__image {
+		@media (min-width: $sm) {
+			width: 36%;
+		}
+	}
+}

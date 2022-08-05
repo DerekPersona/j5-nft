@@ -1,0 +1,21 @@
+.section-numbers {
+	margin-bottom: 70px;
+
+	@media (min-width: $lg) {
+		margin-bottom: 93px;
+	}
+
+	&__title {
+		margin-bottom: 20px;
+		text-align: left;
+
+		@media (min-width: $sm) {
+			text-align: center;
+			margin-bottom: 48px;
+		}
+
+		.theme-dark & {
+			color: $white;
+		}
+	}
+}

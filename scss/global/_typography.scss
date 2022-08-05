@@ -1,0 +1,135 @@
+a {
+	color: $primary;
+
+	.theme-dark {
+		color: $secondary;
+	}
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+
+	&:visited {
+		color: #b63cef;
+		text-decoration: underline;
+	}
+
+	&.link-demo {
+		display: block;
+
+		&--novisit {
+			color: $primary !important;
+
+			.theme-dark & {
+				color: $secondary !important;
+			}
+		}
+
+		&--visit {
+			color: #b63cef !important;
+		}
+	}
+}
+
+.list {
+	@include indent-reset;
+	padding-left: 15px;
+	list-style-position: outside;
+	margin-top: 15px;
+	margin-bottom: 40px;
+
+	li {
+		padding-left: 8px;
+
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+	}
+}
+
+.nft-h1,
+.nft-h2,
+.nft-h3,
+.nft-h4 {
+	@include indent-reset();
+	color: $black;
+
+	.theme-dark & {
+		color: $white;
+	}
+}
+
+.nft-h1 {
+	@include indent-reset();
+	font-family: $dela;
+	font-weight: 400;
+	font-size: 35px;
+	line-height: 41px;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+
+	@media (min-width: $lg) {
+		font-size: 49px;
+		line-height: 56px;
+	}
+}
+
+.nft-h2 {
+	@include indent-reset();
+	font-family: $dela;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 24px;
+	margin-bottom: 16px;
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+
+	@media (min-width: $md) {
+		font-size: 34px;
+		line-height: 42px;
+	}
+
+	@media (min-width: $lg) {
+		font-size: 40px;
+		line-height: 52px;
+	}
+
+	.content & {
+		margin-top: 50px;
+	}
+
+	&--long {
+		@media (min-width: $md) {
+			font-size: 32px;
+			line-height: 40px;
+		}
+	}
+}
+
+.nft-h3 {
+	@include indent-reset();
+	font-family: $dela;
+	font-weight: 400;
+	font-size: 30px;
+	line-height: 40px;
+
+	.content & {
+		margin-top: 40px;
+		margin-bottom: 9px;
+	}
+}
+
+.nft-h4 {
+	@include indent-reset();
+	font-family: $dela;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 23px;
+
+	.content & {
+		margin-top: 40px;
+		margin-bottom: 17px;
+	}
+}

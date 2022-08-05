@@ -1,0 +1,40 @@
+.footer {
+	margin-top: auto;
+	border-top: 1px solid $border;
+	padding-top: 27px;
+	padding-bottom: 27px;
+
+	.theme-dark & {
+		border-top: 1px solid rgba(255, 255, 255, 0.15);
+	}
+
+	&__social {
+		.social {
+			&__item {
+				padding-top: 0;
+				padding-bottom: 0;
+
+				&:not(:last-child) {
+					@media (min-width: $lg) {
+						margin-inline-end: 40px;
+					}
+				}
+
+				&:last-child {
+					svg {
+						margin-right: 0;
+					}
+				}
+
+				svg {
+					width: 45px;
+					height: 45px;
+				}
+
+				span {
+					display: none;
+				}
+			}
+		}
+	}
+}

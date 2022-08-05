@@ -1,0 +1,53 @@
+.section-action {
+	margin-bottom: 70px;
+
+	@media (min-width: $lg) {
+		margin-bottom: 120px;
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 71px 56px;
+		background-color: $primary;
+		background-image: url(@img/section-action.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		border-radius: 25px;
+
+		.theme-dark & {
+			background-color: $secondary;
+		}
+	}
+
+	&__title {
+		color: $white;
+		text-align: center;
+		margin-bottom: 15px;
+
+		@media (min-width: $md) {
+			margin-bottom: 21px;
+		}
+	}
+
+	&__text {
+		max-width: 635px;
+		color: $white;
+		font-size: 17px;
+		line-height: 23px;
+		text-align: center;
+		margin-bottom: 25px;
+
+		@media (min-width: $md) {
+			font-size: 19px;
+			line-height: 25px;
+		}
+
+		@media (min-width: $md) {
+			margin-bottom: 50px;
+		}
+	}
+}

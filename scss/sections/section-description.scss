@@ -1,0 +1,40 @@
+.section-description {
+	padding-top: 80px;
+	padding-bottom: 70px;
+	background-image: url(@img/description-block-image.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: 75% -12px;
+
+	@media (min-width: $md) {
+		padding-top: 114px;
+		padding-bottom: 114px;
+		background-size: auto;
+	}
+
+	.theme-dark & {
+		background-image: url(@img/description-block-image-dark.svg);
+	}
+
+	&__title {
+		margin-bottom: 18px;
+
+		@media (min-width: $md) {
+			margin-bottom: 22px;
+		}
+
+		.theme-dark & {
+			color: $white;
+		}
+	}
+
+	&__text {
+		font-size: 15px;
+		line-height: 23px;
+		margin-bottom: 8px;
+
+		.theme-dark & {
+			color: $white;
+		}
+	}
+}

@@ -1,0 +1,134 @@
+.header {
+	border-bottom: 1px solid $border;
+
+	.theme-dark & {
+		border-bottom: 1px solid #444;
+	}
+
+	.navbar {
+		padding-top: 16px;
+		padding-bottom: 16px;
+
+		@media (min-width: $lg) {
+			padding-top: 8px;
+			padding-bottom: 8px;
+		}
+
+		&-brand {
+			margin-inline-end: 20px;
+			padding: 0;
+
+			&__dark {
+				.theme-dark & {
+					display: block;
+				}
+			}
+
+			&__light {
+				.theme-dark & {
+					display: none;
+				}
+			}
+		}
+
+		&-toggler {
+			padding: 0;
+			border: none;
+
+			&:hover,
+			&:focus {
+				box-shadow: none;
+			}
+
+			&[aria-expanded="true"] {
+				.navbar-toggler-icon {
+					background-image: url(@img/sprite.svg#menu-close);
+					width: 22px;
+					height: 22px;
+
+					.theme-dark & {
+						background-image: url(@img/sprite.svg#menu-close-dark);
+					}
+				}
+			}
+
+			&[aria-expanded="false"] {
+				.navbar-toggler-icon {
+					background-image: url(@img/sprite.svg#menu-open);
+					width: 29px;
+					height: 22px;
+
+					.theme-dark & {
+						background-image: url(@img/sprite.svg#menu-open-dark);
+					}
+				}
+			}
+		}
+
+		&-nav {
+			margin-top: 30px;
+			margin-bottom: 0;
+			margin-inline-end: auto;
+			flex-wrap: wrap;
+			flex-grow: 1;
+
+			@media (min-width: $lg) {
+				margin-top: 0;
+				margin-right: 53px;
+				justify-content: flex-end;
+			}
+
+			.nav-item {
+				padding-left: 0;
+				margin-bottom: 0;
+			}
+
+			.nav-link {
+				font-family: $kanit;
+				color: $black;
+				margin-top: 0;
+				padding: 10px 0px;
+				white-space: nowrap;
+
+				.theme-dark & {
+					color: $white;
+				}
+
+				@media (min-width: $lg) {
+					margin-top: 0;
+					padding: 5px 17.5px;
+				}
+
+				&:hover,
+				&:focus {
+					color: $primary;
+
+					.theme-dark & {
+						color: $secondary;
+					}
+				}
+			}
+		}
+	}
+
+	&__social {
+		margin-top: 5px;
+		margin-bottom: 33px;
+		padding-inline-start: 5px;
+
+		@media (min-width: $lg) {
+			margin-top: 0;
+			margin-bottom: 0;
+			padding-inline-start: 0;
+		}
+
+		.social {
+			&__list {
+				display: block;
+				@media (min-width: $lg) {
+					display: flex;
+				}
+			}
+		}
+	}
+}

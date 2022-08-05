@@ -1,0 +1,151 @@
+.section-hero {
+	background-color: #ecf0fa;
+	padding-top: 10px;
+	padding-bottom: 94px;
+	position: relative;
+	overflow-x: hidden;
+	background-image: url(@img/section-hero-ornament.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center right;
+
+	.theme-dark & {
+		background-image: url(@img/section-hero-ornament-dark.svg);
+	}
+
+	@media (min-width: $md) {
+		padding-top: 60px;
+	}
+
+	.theme-dark & {
+		background-color: $gray-dark;
+	}
+
+	&__wrapper {
+		display: block;
+
+		@media (min-width: $md) {
+			display: flex;
+			flex-direction: row;
+		}
+	}
+
+	&__content {
+		flex-shrink: 0;
+		max-width: 460px;
+		padding-top: 40px;
+
+		@media (min-width: $lg) {
+			max-width: 520px;
+			padding-top: 70px;
+		}
+
+		@media (min-width: $xl) {
+			max-width: 726px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 5px;
+
+		@media (min-width: $md) {
+			display: flex;
+			flex-direction: row;
+			margin-bottom: 24px;
+		}
+
+		.theme-dark & {
+			color: $white;
+		}
+	}
+
+	&__text {
+		font-size: 17px;
+		line-height: 23px;
+		margin-bottom: 26px;
+
+		@media (min-width: $md) {
+			font-size: 19px;
+			line-height: 25px;
+			max-width: 450px;
+			margin-bottom: 59px;
+		}
+
+		@media (min-width: $xl) {
+			max-width: 588px;
+		}
+
+		.theme-dark & {
+			color: $white;
+		}
+	}
+
+	&__image {
+		display: block;
+		position: relative;
+		flex-shrink: 0;
+		width: 560px;
+		height: 490px;
+		margin-left: -100px;
+		margin-right: -100px;
+
+		@media (min-width: $md) {
+			margin-left: 0;
+			margin-right: 0;
+			margin-top: 40px;
+		}
+
+		&-img {
+			box-sizing: border-box;
+			width: 190px;
+			height: auto;
+			padding: 7px;
+			overflow: hidden;
+			position: absolute;
+			overflow: hidden;
+			transition: all $slow cubic-bezier(0.075, 0.82, 0.165, 1);
+
+			img {
+				@include img-cover-center();
+				border-radius: 112px;
+			}
+
+			&--1 {
+				height: 245px;
+				border-radius: 112px;
+				left: 0;
+				top: 80px;
+			}
+
+			&--2 {
+				height: 190px;
+				border-radius: 50%;
+				left: calc(50% - 88px);
+				top: 27px;
+			}
+
+			&--3 {
+				height: 245px;
+				border-radius: 112px;
+				left: calc(50% - 88px);
+				bottom: 30px;
+			}
+
+			&--4 {
+				height: 295px;
+				border-radius: 112px;
+				right: -12px;
+				top: 0;
+				z-index: -1;
+			}
+
+			&--5 {
+				height: 190px;
+				border-radius: 112px;
+				right: -12px;
+				bottom: 0;
+				z-index: -1;
+			}
+		}
+	}
+}

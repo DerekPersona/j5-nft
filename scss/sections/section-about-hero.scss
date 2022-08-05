@@ -1,0 +1,117 @@
+.section-about-hero {
+	margin-bottom: 94px;
+	padding: 60px 0;
+	background-color: #ecf0fa;
+	overflow: hidden;
+
+	@media (min-width: $lg) {
+		margin-bottom: 133px;
+		padding: 96px 0 60px;
+	}
+
+	.theme-dark & {
+		background-color: $gray-dark;
+	}
+
+	&__container {
+		position: relative;
+		z-index: 1;
+
+		&::after {
+			content: '';
+			position: absolute;
+			z-index: -1;
+			right: -132px;
+			bottom: -230px;
+			display: block;
+			width: 330px;
+			height: 330px;
+			border-radius: 50%;
+			background: linear-gradient(163.86deg, #FFFFFF 35.61%, rgba(255, 255, 255, 0) 88.78%);
+			opacity: 0.7;
+
+			@media (min-width: $lg) {
+				bottom: -130px;
+			}
+
+			.theme-dark & {
+				display: none;
+			}
+		}
+	}
+
+	&__image {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -10px;
+		margin-right: -10px;
+
+		@media (min-width: $sm) {
+			flex-wrap: nowrap;
+		}
+
+		&-item {
+			flex-shrink: 0;
+			margin: 5px;
+			width: 65px;
+			height: 65px;
+			border-radius: 50%;
+			overflow: hidden;
+
+			@media (min-width: $xs) {
+				width: 80px;
+				height: 80px;
+			}
+
+			@media (min-width: $md) {
+				margin: 10px;
+				width: 72px;
+				height: 72px;
+			}
+
+			@media (min-width: $lg) {
+				width: 100px;
+				height: 100px;
+			}
+
+			@media (min-width: $xl) {
+				width: 117px;
+				height: 117px;
+			}
+
+			img {
+				@include img-cover-top();
+			}
+		}
+	}
+
+	&__title {
+
+		.theme-dark & {
+			color: $white;
+		}
+	}
+
+	&__text {
+		font-size: 17px;
+		line-height: 23px;
+		margin-bottom: 38px;
+
+		@media (min-width: $md) {
+			font-size: 19px;
+			line-height: 25px;
+			margin-bottom: 64px;
+		}
+
+		.theme-dark & {
+			color: $white;
+		}
+	}
+
+	&__description  {
+
+		@media (min-width: $lg) {
+			margin-top: -6px;
+		}
+	}
+}

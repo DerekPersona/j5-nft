@@ -1,0 +1,111 @@
+.section-membership {
+	margin-bottom: 70px;
+
+	@media (min-width: $lg) {
+		margin-bottom: 85px;
+	}
+
+	&__container {
+		position: relative;
+	}
+
+	&__element {
+		position: absolute;
+		bottom: 84px;
+		right: 0;
+		transform: rotate(2deg);
+		z-index: -1;
+
+		@media (min-width: $xl) {
+			bottom: 84px;
+			right: 20px;
+			width: 205px;
+			height: 205px;
+		}
+
+		.theme-dark & {
+			opacity: 0.1;
+		}
+	}
+
+	&__image {
+		display: flex;
+		margin-left: -6px;
+		margin-right: -6px;
+
+		@media (min-width: $md) {
+			margin-left: -12px;
+			margin-right: -12px;
+		}
+
+		@media (min-width: $lg) {
+			padding-right: 60px;
+		}
+
+		&-wrapper {
+			padding: 6px;
+			width: 33.33%;
+
+			@media (min-width: $md) {
+				padding: 12px;
+			}
+
+			&:nth-child(2) {
+				margin-top: 35px;
+			}
+
+			&:nth-child(3) {
+				margin-top: -24px;
+			}
+		}
+
+		&-item {
+			margin-bottom: 24px;
+			width: 100%;
+			height: 110px;
+			border-radius: 15px;
+			overflow: hidden;
+
+			@media (min-width: $xs) {
+				height: 130px;
+			}
+
+			@media (min-width: $md) {
+				height: 140px;
+			}
+
+			@media (min-width: $xl) {
+				height: 166px;
+			}
+
+			img {
+				@include img-cover-center();
+			}
+		}
+	}
+
+	&__content {
+		padding-top: 20px;
+		max-width: 440px;
+
+		@media (min-width: $xl) {
+			padding-top: 4px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 16px;
+
+		.theme-dark & {
+			color: $white;
+		}
+	}
+
+	&__text {
+		margin-bottom: 35px;
+
+		.theme-dark & {
+			color: $white;
+		}
+	}
+}
