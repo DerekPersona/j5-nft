@@ -318,16 +318,25 @@ a.link-demo--visit {
   text-transform: uppercase;
   letter-spacing: 0.02em;
 }
+.nft-h2.smaller {
+  font-size: 16px;
+}
 @media (min-width: 768px) {
   .nft-h2 {
     font-size: 34px;
     line-height: 42px;
+  }
+  .nft-h2.smaller {
+    font-size: 28px;
   }
 }
 @media (min-width: 992px) {
   .nft-h2 {
     font-size: 40px;
     line-height: 52px;
+  }
+  .nft-h2.smaller {
+    font-size: 32px;
   }
 }
 .content .nft-h2 {
@@ -898,6 +907,10 @@ a.link-demo--visit {
 .header .navbar-brand {
   margin-inline-end: 20px;
   padding: 0;
+  color: inherit;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 .theme-dark .header .navbar-brand__dark {
   display: block;
@@ -1070,31 +1083,24 @@ a.link-demo--visit {
   background-image: url(../img/hero-image.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: calc(50% + 270px) center;
   height: 100vh;
 }
-
 .section-hero__container {
   height: 100%;
   display: grid;
-  place-items: center;
+  align-items: center;
 }
 .section-hero__content {
-  max-width: 460px;
+  max-width: 400px;
   text-align: center;
 }
-@media (min-width: 992px) {
-  .section-hero__content {
-    max-width: 520px;
-  }
-}
-@media (min-width: 1200px) {
-  .section-hero__content {
-    max-width: 726px;
-  }
+.section-hero__logo {
+  width: min(100%, 400px);
 }
 .section-hero__title {
   margin-bottom: 5px;
+  justify-content: center;
 }
 @media (min-width: 768px) {
   .section-hero__title {
