@@ -2227,6 +2227,9 @@ a.link-demo--visit {
   padding: 17px 5px 20px 5px;
   opacity: 0.65;
 }
+.section-faq__item-content ul {
+  margin-bottom: 1rem;
+}
 @media (min-width: 768px) {
   .section-faq__item-content {
     padding: 17px 30px 20px 30px;
