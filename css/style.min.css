@@ -1101,7 +1101,7 @@ a.link-demo--visit {
   text-align: center;
 }
 .section-hero__logo {
-  width: min(100%, 400px);
+  width: min(100%, 250px);
 }
 .section-hero__title {
   margin-bottom: 5px;

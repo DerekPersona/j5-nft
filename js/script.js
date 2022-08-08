@@ -3,6 +3,10 @@
 (function ($) {
   // Animate elements (only desktop).
   if (window.matchMedia('(min-width: 769px)').matches) {
+    $('.binance-link').click(function () {
+      window.location = 'https://www.binance.com/en/nft/home';
+    });
+
     // Animate buttons.
     $('.btn-animate').mouseover(function () {
       $(this).addClass('mouseover');
