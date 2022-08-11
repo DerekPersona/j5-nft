@@ -26,7 +26,6 @@ body.theme-dark {
 .main {
   position: relative;
   overflow: hidden;
-  margin-top: calc(var(--navbar-height) * -1) !important;
 }
 
 .main > section:first-of-type {
